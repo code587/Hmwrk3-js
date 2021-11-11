@@ -12,19 +12,21 @@ function writePassword() {
 //write everything in here except global
 function generatePassword(){
 
-  window.prompt("How many characters do you want your password? Choose a number between 8 through 128.")
   prompt("Include uppercase letters?")
   prompt("Include lowercase letters?")
   prompt("Include special characters?")
   prompt("Include numbers?")
+  prompt ("Choose the number pf password character between 8 through 128.")
   
   let chosenArrays = [...upperAlphabet, ...lowerAlphabet, ...specialCharacters, ...numberCharacters];
 
-  for(i=0; i< 128;i++){console.log (i)}
+  for(i=0; i< 128;i++){
+    password+="chosenArrays";
+  }
 
   if (window.confirm) {
    window.open("exit.html");
-}
+  }
 
   if(prompt === yes) {
     chosenArrays
@@ -37,7 +39,6 @@ function generatePassword(){
   }
   'else' (prompt == no); {
     randomSpecialcharacters
-    console.log(randomSpecialcharacters);
   }
   'else' (prompt == no); {
     randomNumbercharacters
@@ -58,7 +59,7 @@ function generatePassword(){
   Math.floor(Math.random()*numberCharacters.length)
   numberCharacters[randomNumbercharacters]
 
-return "password"
+window.alert ("Your password is "); return "password"
 }
 
 // Add event listener to generate button
