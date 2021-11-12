@@ -1,7 +1,6 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
-
 // Write password to the #password input
 function writePassword() {
   let password = generatePassword();
@@ -10,57 +9,36 @@ function writePassword() {
   passwordText.value = password;
 }
 //write everything in here except global
-function generatePassword(){
+function generatePassword() {
 
-  prompt("Include uppercase letters?")
-  prompt("Include lowercase letters?")
-  prompt("Include special characters?")
-  prompt("Include numbers?")
-  prompt ("Choose the number pf password character between 8 through 128.")
-  
-  let chosenArrays = [...upperAlphabet, ...lowerAlphabet, ...specialCharacters, ...numberCharacters];
+  prompt("Choose between 8 and 128 for number of characters in your password.");
+  prompt("Include uppercase letters? Type y or n"); 
+  prompt("Include lowercase letters? Type y or n");
+  prompt("Include special characters? Type y or n");
+  prompt("Include numbers? Type y or n");
 
-  for(i=0; i< 128;i++){
-    password+="chosenArrays";
-  }
+  let upperCaseAlphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+  Math.floor(Math.random()*upperCaseAlphabet.length);
+  let randomUpperAlphabet = Math.floor(Math.random()*upperCaseAlphabet.length);
+  upperCaseAlphabet[randomUpperAlphabet]
+ 
+  let lowerCaseAlphabet = ["abcdefghijklmnopqrstuvwxyz"].toLowerCase().split("");
+  Math.floor(Math.random()*lowerCaseAlphabet.length);
+  let randomLowerAlphabet = Math.floor(Math.random()*lowerCaseAlphabet.length);
+  lowerCaseAlphabet[randomLowerAlphabet]
 
-  if (window.confirm) {
-   window.open("exit.html");
-  }
-
-  if(prompt === yes) {
-    chosenArrays
-  }
-  else if (prompt == no) {
-    randomUalphabet
-  }
-  else (prompt == no); {
-    randomLalphabet
-  }
-  'else' (prompt == no); {
-    randomSpecialcharacters
-  }
-  'else' (prompt == no); {
-    randomNumbercharacters
-  }
-  let upperAlphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("")
-  Math.floor(Math.random()*upperAlphabet.length);
-  upperAlphabet[randomUalphabet]
-
-  let lowerAlphabet = "abcdefghijklmnopqrstuvwxyz".toLowerCase().split("")
-  Math.floor(Math.random()*lowerAlphabet.length);
-  lowerAlphabet[randomLalphabet]
-
-  let specialCharacters = "!”#$%&’()*+,-./:;<=>?@[\]^_`{|}~".split("")
+  let specialCharacters = "!”#$%&’()*+,-./:;<=>?@[\]^_`{|}~".split("");
   Math.floor(Math.random()*specialCharacters.length);
-  specialCharacters[randomSpecialcharacters]
+  let randomSpecialCharacters = Math.floor(Math.random()*specialCharacters.length);
+  specialCharacters[randomSpecialCharacters]
 
-  let numberCharacters = "0123456789".split("")
-  Math.floor(Math.random()*numberCharacters.length)
-  numberCharacters[randomNumbercharacters]
-
-window.alert ("Your password is "); return "password"
+  let numberCharacters = "123456789".split("");
+  Math.floor(Math.random()*numberCharacters.length);
+  let randomNumberCharacters = Math.floor(Math.random()*numberCharacters.length);
+  numberCharacters[randomNumberCharacters]
+   
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
