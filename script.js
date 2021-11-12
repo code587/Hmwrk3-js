@@ -13,6 +13,7 @@ function generatePassword() {
 
   prompt("Choose between 8 and 128 for number of characters in your password.");
   prompt("Include uppercase letters? Type y or n"); 
+  
   prompt("Include lowercase letters? Type y or n");
   prompt("Include special characters? Type y or n");
   prompt("Include numbers? Type y or n");
